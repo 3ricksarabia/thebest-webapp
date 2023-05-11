@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import { players } from "@/constants/players";
-import { years } from "@/constants/years";
 import Slider from "@/components/slider";
 
 const Home = () => {
@@ -13,7 +12,9 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const ID = entry.target.id?.split("-")[1] || 0;
-            const YEAR = document.querySelector(`#year-${years[Number(ID)]}`);
+            const YEAR = document.querySelector(
+              `#year-${players[Number(ID)].year}`
+            );
             YEAR?.scrollIntoView({ behavior: "smooth", block: "center" });
             setPosition(Number(ID));
             observer.unobserve(entry.target);
@@ -34,7 +35,7 @@ const Home = () => {
   return (
     <main className={styles.container}>
       <div className={styles.years}>
-        {years.map((year, index) => (
+        {players.map(({ year }, index) => (
           <a
             key={year}
             id={`year-${year}`}

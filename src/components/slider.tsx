@@ -9,7 +9,7 @@ const Slider = () => {
           <div key={index} id={`card-${index}`} className={styles.card}>
             <div className={styles.info}>
               <h3 className={styles.name}>{player.name}</h3>
-              <p className={styles.team}>{player.team}</p>
+              <p className={styles.team}>{player.club}</p>
               <hr />
               <section className={styles.details}>
                 <div className={styles.box}>
@@ -22,7 +22,7 @@ const Slider = () => {
                 </div>
                 <div className={styles.box}>
                   <h4 className={styles.title}>Nationality</h4>
-                  <h5 className={styles.value}>{player.nationality}</h5>
+                  <h5 className={styles.value}>{player.country}</h5>
                 </div>
               </section>
             </div>
