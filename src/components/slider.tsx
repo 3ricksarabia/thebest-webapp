@@ -1,5 +1,5 @@
-import styles from "@/styles/Home.module.css";
-import { players } from "@/constants/players";
+import styles from '@/styles/Home.module.css'
+import { players } from '@/constants/players'
 
 const Slider = () => {
   return (
@@ -30,7 +30,7 @@ const Slider = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Slider;
+export default Slider
